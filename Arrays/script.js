@@ -63,7 +63,47 @@ console.log(arr.at(-1));
 console.log('jonas'.at(0));
 console.log('jonas'.at(-1));
 
+// Looping Arrays: forEach
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+//   }
+// }
+
+// console.log('---- FOREACH ----');
+// movements.forEach(function (mov, i, arr) {
+//   if (mov > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${mov}`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+//   }
+// });
+
+
+//***********filter************
+const deposits = movements.filter(function (mov) {
+    return mov > 0;
+  });
+  console.log(movements);
+  console.log(deposits);
+    
+  const withdrawals = movements.filter(mov => mov < 0);
+  console.log(withdrawals);
 
 
 
+//*****************REDUCE****************** 
+
+console.log(movements);
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+// console.log(`Iteration ${i}: ${acc}`);
+// return acc + cur;
+//  }, 0);
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance);
 
